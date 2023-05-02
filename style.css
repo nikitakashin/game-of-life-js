@@ -1,0 +1,141 @@
+:root {
+  --color-light: white;
+  --color-dark: #212121;
+  --color-blue: #007dfa;
+
+  --color-background: var(--color-light);
+  --color-text: var(--color-dark);
+  --color-accent: var(--color-blue);
+
+  --size-bezel: 0.5rem;
+  --size-radius: 4px;
+
+  line-height: 1.4;
+  font-family: "Courier New", Courier, monospace;
+  font-size: calc(0.6rem + 0.4vw);
+  color: var(--color-text);
+  background: var(--color-background);
+  font-weight: 300;
+  padding: 0 calc(var(--size-bezel) * 3);
+}
+
+.input {
+  position: relative;
+}
+
+.input__label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * 0.5);
+  margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * 0.5);
+  background: pink;
+  white-space: nowrap;
+  transform: translate(0, 0);
+  transform-origin: 0 0;
+  background: var(--color-background);
+  transition: transform 120ms ease-in;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.input__field {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border: 3px solid currentColor;
+  padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
+  color: currentColor;
+  background: transparent;
+  border-radius: var(--size-radius);
+}
+
+.input__field:focus + .input__label,
+.input__field:not(:placeholder-shown) + .input__label {
+  transform: translate(0.25rem, -65%) scale(0.8);
+}
+
+.input__field:disabled {
+  opacity: 0.5;
+}
+
+canvas {
+  position: absolute;
+  border: 1px solid black;
+}
+
+.overlay {
+  position: absolute;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.menu {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.field {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 56px;
+}
+
+.settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.settings .input {
+  margin: 6px;
+}
+
+.start-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-button .base-button {
+  margin-top: 12px;
+  width: 332px;
+}
+
+.grid {
+  position: absolute;
+}
+
+.base-button {
+  background-color: var(--color-accent);
+  border: 0 solid #e5e7eb;
+  font-family: "Courier New", Courier, monospace;
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: 0.75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  border-radius: var(--size-radius);
+}

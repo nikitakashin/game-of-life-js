@@ -1,0 +1,51 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game of life</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="menu">
+        <div class="title">Игра жизнь</div>
+
+        <div class="settings">
+          <label class="input">
+            <input
+              id="sizeInput"
+              class="input__field"
+              type="number"
+              placeholder=" "
+              onchange="changeSize(event)"
+            />
+            <span class="input__label">Размер</span>
+          </label>
+
+          <label class="input">
+            <input
+              id="speedInput"
+              class="input__field"
+              type="number"
+              placeholder=" "
+              onchange="changeSpeed(event)"
+            />
+            <span class="input__label">Скорость</span>
+          </label>
+        </div>
+
+        <div class="start-button">
+          <button class="base-button" onclick="start(event);">Начать</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <canvas id="canvas"></canvas>
+        <canvas id="grid" class="grid"></canvas>
+        <div id="overlay" class="overlay" onclick="handleClick(event);"></div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
